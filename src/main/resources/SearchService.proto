@@ -13,16 +13,30 @@ message DocumentsResponse {
 
 message SimilarityScoreRequest {
     string query = 1;
-    repeated string docId = 2;
+    repeated int32 docId = 2;
 }
 
 message Document {
-    string id = 1;
-    double score = 2;
+    int32 id = 1;
+    float score = 2;
 }
 
+message BM25TuneRequest {
+    float k1 = 1;
+    float b = 2;
+}
+message MinScoreRequest {
+    string query = 1;
+}
+
+message MinScoreResponse {
+    float score = 1;
+}
 
 service SearchService {
     rpc knn(SearchRequest) returns (DocumentsResponse);
     rpc getSimilarityScores(SimilarityScoreRequest) returns (DocumentsResponse);
+    rpc changeSimilarityParams(BM25TuneRequest) returns (google.protobuf.Empty);
+    rpc getMinScore(MinScoreRequest) returns (MinScoreResponse);
 }
+import "google/protobuf/empty.proto";

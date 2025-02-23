@@ -4,14 +4,14 @@ import java.util.Map;
 
 public class SimilarityScoreRequest {
     private String query;
-    private Map<String, String> idsToText;
+    private Map<Integer, float[]> idsToVector;
 
     public SimilarityScoreRequest() {
     }
 
-    public SimilarityScoreRequest(String query, Map<String, String> idsToText) {
+    public SimilarityScoreRequest(String query, Map<Integer, float[]> idsToVector) {
         this.query = query;
-        this.idsToText = idsToText;
+        this.idsToVector = idsToVector;
     }
 
     public String getQuery() {
@@ -22,19 +22,19 @@ public class SimilarityScoreRequest {
         this.query = query;
     }
 
-    public Map<String, String> getIdsToText() {
-        return idsToText;
+    public Map<Integer, float[]> getIdsToVector() {
+        return idsToVector;
     }
 
-    public void setIdsToText(Map<String, String> idsToText) {
-        this.idsToText = idsToText;
+    public void setIdsToVector(Map<Integer, float[]> idsToVector) {
+        this.idsToVector = idsToVector;
     }
 
     @Override
     public String toString() {
         return "SimilarityScoreRequest{" +
                 "query='" + query + '\'' +
-                ", idsToText=" + idsToText +
+                ", idsToVector=" + idsToVector +
                 '}';
     }
 }

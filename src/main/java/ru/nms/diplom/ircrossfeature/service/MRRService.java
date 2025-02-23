@@ -2,18 +2,19 @@ package ru.nms.diplom.ircrossfeature.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class MRRService {
 
-    public static double calculateMrr(Map<String, String> relevantPassages, Map<String, List<String>> queryToResultPassages) {
-        double mrr = 0;
+    public static float calculateMrr(Map<String, Integer> relevantPassages, Map<String, List<Integer>> queryToResultPassages) {
+        float mrr = 0;
         for (String query : queryToResultPassages.keySet()) {
-            List<String> neighbours = queryToResultPassages.get(query);
-            String relevantPassage = relevantPassages.get(query);
+            List<Integer> neighbours = queryToResultPassages.get(query);
+            Integer relevantPassage = relevantPassages.get(query);
 
             for (int i = 0; i < neighbours.size(); i++) {
-                if (neighbours.get(i).replaceAll("\"", "").equals(relevantPassage.replace("\"", ""))) {
-                    mrr += (1.0 / (i + 1));
+                if (neighbours.get(i).equals(relevantPassage)) {
+                    mrr += (float) (1.0 / (i + 1));
                     break;
                 }
             }

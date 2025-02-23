@@ -16,7 +16,11 @@ public class TestApiClient {
 
         CrossFeatureRequest request = CrossFeatureRequest.newBuilder()
                 .setK(10)
-                .setQueriesAmount(100)
+                .setQueriesAmount(5)
+                .setK1(1.2f)
+                .setB(0.75f)
+                .setFaissRsfCoefficient(1.0f)
+                .setRrfAlfa(1)
                 .build();
 
         CrossFeatureResponse response = stub.calculateMRR(request);

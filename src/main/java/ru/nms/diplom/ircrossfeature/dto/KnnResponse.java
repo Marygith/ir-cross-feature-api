@@ -6,20 +6,20 @@ import java.util.Map;
 
 public class KnnResponse {
 
-    private Map<String, Double> neighbours;
+    private Map<Integer, Float> neighbours;
 
-    public KnnResponse(Map<String, Double> neighbours) {
+    public KnnResponse(Map<Integer, Float> neighbours) {
         this.neighbours = neighbours;
     }
 
     public KnnResponse() {
     }
 
-    public Map<String, Double> getNeighbours() {
+    public Map<Integer, Float> getNeighbours() {
         return neighbours;
     }
 
-    public void setNeighbours(Map<String, Double> neighbours) {
+    public void setNeighbours(Map<Integer, Float> neighbours) {
         this.neighbours = neighbours;
     }
 }

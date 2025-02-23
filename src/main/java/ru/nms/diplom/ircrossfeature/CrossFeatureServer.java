@@ -6,7 +6,7 @@ import ru.nms.diplom.ircrossfeature.service.CrossFeatureServiceImpl;
 
 import java.io.IOException;
 
-public class Main {
+public class CrossFeatureServer {
 
     public static void main(String[] args) {
         Server server = ServerBuilder

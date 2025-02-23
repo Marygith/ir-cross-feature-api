@@ -5,15 +5,21 @@ package ru.nms.diplom.ircrossfeature.service;
 message CrossFeatureRequest {
     int32 queriesAmount = 1;
     int32 k = 2;
+    float k1 = 3;
+    float b = 4;
+    float faissRsfCoefficient = 5;
+    int32 rrfAlfa = 6;
 }
 
 message CrossFeatureResponse {
-    double faissMRR = 1;
-    double bm25MRR = 2;
-    double mrrWithRRF = 3;
-    double mrrWithRSF = 4;
+    float faissMRR = 1;
+    float bm25MRR = 2;
+    float mrrWithRRF = 3;
+    float mrrWithRSF = 4;
 }
 
 service CrossFeatureService {
     rpc calculateMRR(CrossFeatureRequest) returns (CrossFeatureResponse);
 }
+
+import "google/protobuf/empty.proto";

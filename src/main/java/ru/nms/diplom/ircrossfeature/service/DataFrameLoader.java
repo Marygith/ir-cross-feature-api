@@ -11,14 +11,14 @@ import java.util.Map;
 
 public class DataFrameLoader {
 
-    public static Map<String, String> loadRelevantPassages(String filePath){
-        Map<String, String> relevantPassages = new HashMap<>();
+    public static Map<String, Integer> loadRelevantPassages(String filePath){
+        Map<String, Integer> relevantPassages = new HashMap<>();
 
         try (FileReader reader = new FileReader(filePath);
              CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader().withDelimiter('^'))) {
             for (CSVRecord csvRecord : csvParser) {
                 String key = csvRecord.get("query");
-                String value = csvRecord.get("relevant_passage_id");
+                Integer value = Integer.parseInt(csvRecord.get("relevant_passage_id"));
                 relevantPassages.put(key, value);
             }
         } catch (IOException e) {

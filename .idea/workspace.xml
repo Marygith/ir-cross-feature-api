@@ -4,25 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="067733fb-e4d6-490c-b268-b98302b2983a" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/client/PythonServerClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/SimilarityScoreRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/SimilarityScoreResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/MRRService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/ir/IRService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/ir/impl/FaissIRService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/util/Utils.java" afterDir="false" />
+    <list default="true" id="067733fb-e4d6-490c-b268-b98302b2983a" name="Changes" comment="mvp">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/FeatureStoreBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/MRROptimizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/MinScoreRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/MinScoreResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/optimization/JeneticsMRROptimizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/optimization/NelderMeadMRROptimizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/optimization/Passage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/optimization/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/FeatureService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/FeatureStoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/PassageReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/util/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/nms/diplom/ircrossfeature/benchmark/CrossFeatureBenchmark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/nms/diplom/ircrossfeature/benchmark/MRRBenchmark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/old/BM25KnnRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/old/BM25Type.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/old/KnnRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/KnnRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/old/KnnResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/KnnResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/CrossFeatureServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/client/PythonServerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/client/PythonServerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/KnnResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/KnnResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/SimilarityScoreRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/SimilarityScoreRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/SimilarityScoreResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/dto/SimilarityScoreResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/CrossFeatureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/CrossFeatureServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/DataFrameLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/DataFrameLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/LuceneIRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/ir/impl/LuceneIRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/MRRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/MRRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/ir/IRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/ir/IRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/ir/impl/FaissIRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/ir/impl/FaissIRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/ir/impl/LuceneIRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/ir/impl/LuceneIRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/util/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/util/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/CrossFeatureService.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CrossFeatureService.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/SearchService.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SearchService.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nms/diplom/ircrossfeature/TestApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nms/diplom/ircrossfeature/TestApiClient.java" afterDir="false" />
@@ -57,10 +67,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.CrossFeatureBenchmark.executor": "Run",
+    "Application.FeatureStoreBuilder.executor": "Run",
+    "Application.MRRBenchmark.executor": "Run",
+    "Application.MRRService.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Application.TestApiClient.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.ir-cross-feature-api [clean].executor": "Run",
+    "Maven.ir-cross-feature-api [compile].executor": "Run",
     "Maven.ir-cross-feature-api [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -80,13 +95,52 @@
       <recent name="ru.nms.diplom.ircrossfeature.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestApiClient">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.nms.diplom.ircrossfeature.Main" />
+  <component name="RunManager" selected="Application.FeatureStoreBuilder">
+    <configuration name="CrossFeatureServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nms.diplom.ircrossfeature.CrossFeatureServer" />
       <module name="ir-cross-feature-api" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.nms.diplom.ircrossfeature.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FeatureStoreBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nms.diplom.ircrossfeature.FeatureStoreBuilder" />
+      <module name="ir-cross-feature-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nms.diplom.ircrossfeature.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MRRBenchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nms.diplom.ircrossfeature.benchmark.MRRBenchmark" />
+      <module name="ir-cross-feature-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nms.diplom.ircrossfeature.benchmark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MRRService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.nms.diplom.ircrossfeature.service.MRRService" />
+      <module name="ir-cross-feature-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.nms.diplom.ircrossfeature.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,8 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FeatureStoreBuilder" />
         <item itemvalue="Application.TestApiClient" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.CrossFeatureServer" />
+        <item itemvalue="Application.MRRService" />
+        <item itemvalue="Application.MRRBenchmark" />
       </list>
     </recent_temporary>
   </component>
@@ -131,56 +188,43 @@
       <option name="project" value="LOCAL" />
       <updated>1736703339252</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="mvp">
+      <option name="closed" value="true" />
+      <created>1736807237289</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736807237289</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="mvp" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/CrossFeatureServiceImpl.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/CrossFeatureServiceImpl.java</url>
-          <line>43</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/CrossFeatureServiceImpl.java</url>
-          <line>42</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/CrossFeatureServiceImpl.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/CrossFeatureServiceImpl.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.ClassCastException" package="java.lang" />
           <option name="timeStamp" value="21" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/nms/diplom/ircrossfeature/service/FeatureStoreService.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((java.util.ArrayList)((HashMap.Node)((HashMap)queryToResultPassages).entrySet().toArray()[1]).getValue()).get(0)" custom="java.util.HashMap.Node,java.util.HashMap,java.util.ArrayList" />
+        <watch expression="((HashMap.Node)((HashMap)queryToDocuments).entrySet().toArray()[0]).getValue()" custom="java.util.HashMap.Node,java.util.HashMap" />
+        <watch expression="((HashMap.Node)((HashMap)resultsFromOtherIRApi).entrySet().toArray()[1]).getKey()" custom="java.util.HashMap.Node,java.util.HashMap" />
+        <watch expression="luceneIRService" language="JAVA" />
+        <watch expression="luceneIRService" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

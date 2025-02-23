@@ -8,7 +8,8 @@ import java.util.stream.Collectors;
 
 public class Utils {
 
-    public static Map<String, List<String>> sortSByScoresAndToList(Map<String,  Map<String, Double>> results, Comparator<Map.Entry<String, Double>> comparator) {
+    public static final Comparator<Float> FLOAT_COMPARATOR = Float::compare;
+    public static Map<String, List<Integer>> sortSByScoresAndToList(Map<String,  Map<Integer, Float>> results, Comparator<Map.Entry<Integer, Float>> comparator) {
         return results.entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
@@ -19,13 +20,17 @@ public class Utils {
                 ));
     }
 
-    public static void normalizeScores(Map<String, Map<String, Double>> queryToDocuments, boolean inverted) {
-        for (Map.Entry<String, Map<String, Double>> entry : queryToDocuments.entrySet()) {
-            Map<String, Double> docScores = entry.getValue();
-
-            double maxScore = docScores.values().stream().max(Comparator.comparingDouble(v -> v)).get();
-
-            docScores.replaceAll((docId, score) -> inverted ? 1 - (score / maxScore): (score / maxScore));
-        }
-    }
+//    public static void normalizeScores(Map<String, Map<String, Float>> queryToDocuments, boolean inverted) {
+//        for (Map.Entry<String, Map<String, Float>> entry : queryToDocuments.entrySet()) {
+//            Map<String, Float> docScores = entry.getValue();
+//
+//            float maxScore = docScores.values().stream().max(Comparator.comparingFloat(v -> v)).get();
+//
+//            docScores.replaceAll((docId, score) -> inverted ? 1 - (score / maxScore): (score / maxScore));
+//            if (inverted) {
+//                float secondMaxScore = docScores.values().stream().max(Comparator.comparingFloat(v -> v)).get();
+//                docScores.replaceAll((docId, score) -> score / secondMaxScore);
+//            }
+//        }
+//    }
 }

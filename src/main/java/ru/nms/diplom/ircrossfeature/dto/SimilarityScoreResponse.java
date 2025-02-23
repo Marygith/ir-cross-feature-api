@@ -3,20 +3,20 @@ package ru.nms.diplom.ircrossfeature.dto;
 import java.util.Map;
 
 public class SimilarityScoreResponse {
-    private Map<String, Double> idsToScore;
+    private Map<Integer, Float> idsToScore;
 
     public SimilarityScoreResponse() {
     }
 
-    public SimilarityScoreResponse(Map<String, Double> idsToScore) {
+    public SimilarityScoreResponse(Map<Integer, Float> idsToScore) {
         this.idsToScore = idsToScore;
     }
 
-    public Map<String, Double> getIdsToScore() {
+    public Map<Integer, Float> getIdsToScore() {
         return idsToScore;
     }
 
-    public void setIdsToScore(Map<String, Double> idsToScore) {
+    public void setIdsToScore(Map<Integer, Float> idsToScore) {
         this.idsToScore = idsToScore;
     }
 }
