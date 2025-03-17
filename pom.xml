@@ -86,7 +86,15 @@
             <artifactId>commons-math3</artifactId>
             <version>3.6.1</version>
         </dependency>
+
+<!--        Catboost-->
+        <dependency>
+            <groupId>ai.catboost</groupId>
+            <artifactId>catboost-prediction</artifactId>
+            <version>1.2.2</version>  <!-- Update to latest -->
+        </dependency>
     </dependencies>
+
 
 
 

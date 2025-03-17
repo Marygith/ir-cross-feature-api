@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ru.nms.diplom.ircrossfeature.service;
+
+service QueryRewriter {
+  rpc rephrase(QueryRequest) returns (QueryResponse);
+}
+
+message QueryRequest {
+  string query = 1;
+  int32 num_variants = 2;
+}
+
+message QueryResponse {
+  repeated string variants = 1;
+}

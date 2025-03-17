@@ -15,8 +15,8 @@ public class TestApiClient {
     public static void main(String[] args) {
 
         CrossFeatureRequest request = CrossFeatureRequest.newBuilder()
-                .setK(10)
-                .setQueriesAmount(5)
+                .setK(1000)
+                .setQueriesAmount(5000)
                 .setK1(1.2f)
                 .setB(0.75f)
                 .setFaissRsfCoefficient(1.0f)

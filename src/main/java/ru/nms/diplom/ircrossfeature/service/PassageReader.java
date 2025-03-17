@@ -8,6 +8,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import static ru.nms.diplom.ircrossfeature.util.Constants.EMBEDDINGS_FILE;
+import static ru.nms.diplom.ircrossfeature.util.Constants.VECTOR_SIZE;
+
 public class PassageReader {
 
     private final Map<Integer, float[]> idToVector;
@@ -15,7 +18,7 @@ public class PassageReader {
     public PassageReader() {
         this.idToVector = new HashMap<>();
         try {
-            loadCSV("D:\\diplom\\data\\passage_data.csv");
+            loadCSV(EMBEDDINGS_FILE);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -27,14 +30,14 @@ public class PassageReader {
 
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length != 769) {
+                if (parts.length != VECTOR_SIZE + 1) {
                     throw new IllegalArgumentException("Invalid vector length for line: " + line);
                 }
 
                 // Parse ID and vector
                 Integer id = Integer.parseInt(parts[0]);
-                float[] vector = new float[768];
-                for (int i = 0; i < 768; i++) {
+                float[] vector = new float[VECTOR_SIZE];
+                for (int i = 0; i < VECTOR_SIZE; i++) {
                     vector[i] = Float.parseFloat(parts[i + 1]);
                 }
 
@@ -50,11 +53,10 @@ public class PassageReader {
 
     public static void main(String[] args) {
         PassageReader reader = new PassageReader();
-        String csvPath = "D:\\diplom\\data\\passage_data.csv";
 
         try {
             // Load the CSV file
-            reader.loadCSV(csvPath);
+            reader.loadCSV(EMBEDDINGS_FILE);
             System.out.println("CSV loaded successfully.");
 
             // Example: Retrieve a vector by ID
